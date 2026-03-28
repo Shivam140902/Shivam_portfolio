@@ -2,7 +2,6 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
@@ -11,9 +10,12 @@ import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
   useEffect(() => {
-    const social = document.getElementById("social") as HTMLElement;
+    const social = document.getElementById("social");
+    if (!social) return;
 
-    social.querySelectorAll("span").forEach((item) => {
+    const spans = social.querySelectorAll("span");
+
+    spans.forEach((item) => {
       const elem = item as HTMLElement;
       const link = elem.querySelector("a") as HTMLElement;
 
@@ -47,11 +49,11 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
+      // cleanup
       return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mousemove", onMouseMove);
       };
     });
   }, []);
@@ -59,46 +61,46 @@ const SocialIcons = () => {
   return (
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
+        
+        {/* GitHub */}
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
+            href="https://github.com/Shivam140902"
             target="_blank"
             rel="noreferrer"
           >
             <FaGithub />
           </a>
         </span>
+
+        {/* LinkedIn */}
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/shivam-swami-3a643a258/"
             target="_blank"
             rel="noreferrer"
           >
             <FaLinkedinIn />
           </a>
         </span>
+
+        {/* Instagram */}
         <span>
           <a
-            href="https://www.youtube.com/@Leftbraincoder"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaYoutube />
-          </a>
-        </span>
-        <span>
-          <a
-            href="https://www.instagram.com/leftbraincoder/"
+            href="https://www.instagram.com/codeby.shivam/"
             target="_blank"
             rel="noreferrer"
           >
             <FaInstagram />
           </a>
         </span>
+
       </div>
+
+      {/* Resume Button */}
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
+        href="/resume.pdf"
         target="_blank"
         rel="noreferrer"
       >

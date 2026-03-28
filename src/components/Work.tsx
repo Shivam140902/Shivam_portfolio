@@ -2,35 +2,31 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import acmw from "../assets/acmw.png";
+import upi from "../assets/upi.png";
+import travel from "../assets/travel.png";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    title: "ACM-W Student Chapter Website",
+    category: "Official ACM-W MIT ADT Student Chapter Website",
+    tools: "HTML, CSS, JavaScript",
+    image: acmw, // make sure imported
+    link: "#", // or live link
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
+    title: "UPI Fraud Detection System",
+    category: "Machine Learning Project",
+    tools: "Python, Flask, Machine Learning, Pandas, Scikit-learn",
+    image: upi, // make sure imported
+    link: "https://github.com/Shivam140902/UPI-Fraud-Detection",
   },
   {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
-  },
-  {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    title: "Travel & Tourism Management System",
+    category: "Travel Booking Platform",
+    tools: "HTML, CSS, JavaScript, Database",
+    image: travel, // make sure imported
+    link: "https://github.com/Shivam140902/Travel-and-Tourism-Management-System",
   },
 ];
 

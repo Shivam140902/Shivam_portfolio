@@ -13,28 +13,31 @@ import setSplitText from "./utils/splitText";
 const TechStack = lazy(() => import("./TechStack"));
 
 const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
+  const [isDesktopView, setIsDesktopView] = useState(false);
 
   useEffect(() => {
-    const resizeHandler = () => {
-      setSplitText();
+    const checkScreen = () => {
       setIsDesktopView(window.innerWidth > 1024);
     };
-    resizeHandler();
-    window.addEventListener("resize", resizeHandler);
+
+    checkScreen(); // initial check
+    setSplitText(); // run once
+
+    window.addEventListener("resize", checkScreen);
+
     return () => {
-      window.removeEventListener("resize", resizeHandler);
+      window.removeEventListener("resize", checkScreen);
     };
-  }, [isDesktopView]);
+  }, []);
 
   return (
     <div className="container-main">
       <Cursor />
       <Navbar />
       <SocialIcons />
+
       {isDesktopView && children}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">
@@ -43,11 +46,13 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Career />
             <Work />
+
             {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
+              <Suspense fallback={<div>Loading...</div>}>
                 <TechStack />
               </Suspense>
             )}
+
             <Contact />
           </div>
         </div>
