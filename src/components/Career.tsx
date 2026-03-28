@@ -14,21 +14,6 @@ const Career = () => {
             <div className="career-dot"></div>
           </div>
 
-          {/* Internship */}
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Web Developer Intern</h4>
-                <h5>Prodigy InfoTech (Remote)</h5>
-              </div>
-              <h3>Dec 2024 – Present</h3>
-            </div>
-            <p>
-              Working on real-world web development projects, improving frontend
-              skills, and building responsive and user-friendly applications.
-            </p>
-          </div>
-
           {/* College */}
           <div className="career-info-box">
             <div className="career-info-in">
@@ -59,6 +44,23 @@ const Career = () => {
               problem-solving and development skills.
             </p>
           </div>
+
+          {/* ACM-W Role */}
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Web Master Head</h4>
+                <h5>ACM-W Student Chapter, MIT ADT University</h5>
+              </div>
+              <h3> Dec 2025 – Present</h3>
+            </div>
+            <p>
+              Led web development activities for the chapter, managed and maintained the
+              website, and ensured a smooth digital presence. Collaborated with the team
+              to build responsive and user-friendly platforms.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
